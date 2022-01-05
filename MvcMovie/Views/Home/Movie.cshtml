@@ -1,0 +1,51 @@
+﻿@using MvcMovie.Services
+@model MvcMovie.Services.MovieInfo
+
+@{
+    ViewData["Title"] = "Смотреть " + Model.nameRu + " онлайн бесплатно в хороше качестве";
+}
+
+<link rel="stylesheet" href="~/css/movie_info.css">
+<link rel="stylesheet" href="~/css/style.css">
+<div class="container_film">
+    <div class="filmName">
+        <h3>@Model.nameRu</h3>
+        <h4>@Model.nameOriginal</h4>
+    </div>
+    <div class="posters">
+        <img src=@Model.posterUrlPreview/>
+    </div>
+
+    <div class="info_film">
+
+        <h5>Рейтинги:</h5>
+        @if (@Model.slogan is not null)
+        {
+            <h5>Слоган:</h5>
+        }
+        <h5>Дата выхода:</h5>
+        <h5>Жанр: </h5>
+    </div>
+    <div class="answers">
+        @if (@Model.ratingKinopoisk is not null && @Model.ratingImdb is not null)
+        {
+            <h5 class="rating"><a href="https://kinopoisk.ru/film/">Кинопоиск:</a> <b>@Model.ratingKinopoisk</b> (@Model.ratingKinopoiskVoteCount) <a href="https://imdb.com/title/">IMDb:</a> <b>@Model.ratingImdb</b> (@Model.ratingImdbVoteCount) </h5>
+        }
+        else if (@Model.ratingImdb is null)
+        {
+            <h5 class="rating"><a href="https://kinopoisk.ru/film/">Кинопоиск:</a> <b>@Model.ratingKinopoisk</b> (@Model.ratingKinopoiskVoteCount) </h5>
+        }
+
+        @if (@Model.slogan is not null)
+        {
+            <h5>@Model.slogan</h5>
+        }
+        <h5>@Model.year</h5>
+        <h5 style="text-transform: capitalize">@Model.genres[0].genre</h5>
+    </div>
+</div>
+
+<div class="preview">
+<div data-kinopoisk="@ViewData["id"]" id="kinobd"></div>
+    <script src="https://kinobd.ru/js/player_.js"></script>
+</div>
