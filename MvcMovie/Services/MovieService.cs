@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.StaticFiles;
 namespace MvcMovie.Services;
 
 public record MovieInfo(string? nameRu, string? nameEn, string? nameOriginal, MovieSearchResultFilmCountry[] countries, MovieSearchResultFilmGenre[] genres, 
-    double? ratingKinopoisk, double? ratingImdb, int? year, string? type, string? posterUrlPreview, double? ratingKinopoiskVoteCount, 
-    double? ratingImdbVoteCount, string? description, string? slogan, string? releaseDate);
+    double? ratingKinopoisk, double? ratingImdb, int? year, string? type, string? posterUrlPreview, string? posterUrl, double? ratingKinopoiskVoteCount, 
+    double? ratingImdbVoteCount, string? description, string? slogan, string? releaseDate, float? filmLength, string? url);
 public record MovieSearchResultFilmGenre(string? genre);
 
 public record MovieSearchResultFilmCountry(string? country);

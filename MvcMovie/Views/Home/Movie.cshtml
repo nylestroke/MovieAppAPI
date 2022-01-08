@@ -5,47 +5,127 @@
     ViewData["Title"] = "Смотреть " + Model.nameRu + " онлайн бесплатно в хороше качестве";
 }
 
-<link rel="stylesheet" href="~/css/movie_info.css">
 <link rel="stylesheet" href="~/css/style.css">
-<div class="container_film">
-    <div class="filmName">
-        <h3>@Model.nameRu</h3>
-        <h4>@Model.nameOriginal</h4>
-    </div>
-    <div class="posters">
-        <img src=@Model.posterUrlPreview/>
-    </div>
+<script src="~/js/jQuery.js"></script>
+<script src="~/js/swiper-bundle.min.js"></script>
 
-    <div class="info_film">
+<!--==Movie-Banner=========================================-->
+    <section class="movie-banner">
+        <!--==img==================================-->
+        <div class="m-banner-img">
+            <img alt="" src="@Model.posterUrl">
+        </div>
+        <!--content================================-->
+        <div class="banner-container">
+            <!--title-container*******************----->
+            <div class="title-container">
+                <!--title-top===============-->
+                <div class="title-top">
+                <!--title----->
+                <div class="movie-title">
+                    <h1>@Model.nameRu</h1>
+                </div>
+                <!--more-about-movie-->
+                <div class="more-about-movie">
+                    <span>Рейтинг: </span>
+                    <div class="rating">
+                        @if (Model.ratingKinopoisk is not null && Model.ratingImdb is not null)
+                        {
+                            @Model.ratingKinopoisk<img alt="kinopoisk" src="~/img/kinopoisk-logo.png">
+                            @Model.ratingImdb <img src="~/img/IMDb-icon.png" alt="imbd">
+                        }
+                        else if (@Model.ratingImdb is null)
+                        {
+                            @Model.ratingKinopoisk<img alt="kinopoisk" src="~/img/kinopoisk-logo.png">
 
-        <h5>Рейтинги:</h5>
-        @if (@Model.slogan is not null)
-        {
-            <h5>Слоган:</h5>
-        }
-        <h5>Дата выхода:</h5>
-        <h5>Жанр: </h5>
-    </div>
-    <div class="answers">
-        @if (@Model.ratingKinopoisk is not null && @Model.ratingImdb is not null)
-        {
-            <h5 class="rating"><a href="https://kinopoisk.ru/film/">Кинопоиск:</a> <b>@Model.ratingKinopoisk</b> (@Model.ratingKinopoiskVoteCount) <a href="https://imdb.com/title/">IMDb:</a> <b>@Model.ratingImdb</b> (@Model.ratingImdbVoteCount) </h5>
-        }
-        else if (@Model.ratingImdb is null)
-        {
-            <h5 class="rating"><a href="https://kinopoisk.ru/film/">Кинопоиск:</a> <b>@Model.ratingKinopoisk</b> (@Model.ratingKinopoiskVoteCount) </h5>
-        }
+                        }
+                    </div>
+                    <span>@Model.year</span>
+                    <span>@Model.filmLength мин</span>
+                </div>
+                
+                @if (@Model.slogan is not null)
+                {
+                    <div class="slogan">
+                        Слоган: <span>@Model.slogan</span>
+                    </div>
+                    
+                }
+                
+                <!--language--------->
+                <div class="language">
+                    <span>Дубляж</span>
+                </div>
+                </div>
+                <!--Title-botttom==========================-->
+                <div class="title-bottom">
+                    <!--category------->
+                    <div class="category">
+                        <strong>Жанр:</strong><br/>
+                        <a href="" style="text-transform: capitalize">
+                            @string.Join(", ", Model.genres?.Select(e => e.genre)?.Take(2) ?? Array.Empty<string>())
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--play-btn******************************--->
+            <div class="play-btn-container">
+                <div class="play-btn">
+                    <a href="javascript:void(null)">
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </div>
+            <!--Video/full-Movie***************************-->
+            <div id="play" class="play">
+                <!--close-btn--->
+                <a href="javascript:void(null)" class="close-movie">
+                    <i class="fas fa-times"></i>
+                </a>
+                <!--movie------->
+                <div class="play-movie">
+                    <iframe src="@Model.url" id="m-video"> frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Banner-end------------->
+    <!--details=====================================-->
+<section class="movie-details">
+    <strong>@Model.nameRu</strong>
+    <p>@Model.description</p>
+</section>
 
-        @if (@Model.slogan is not null)
-        {
-            <h5>@Model.slogan</h5>
-        }
-        <h5>@Model.year</h5>
-        <h5 style="text-transform: capitalize">@Model.genres[0].genre</h5>
-    </div>
-</div>
-
-<div class="preview">
+<div class="movie-preview">
 <div data-kinopoisk="@ViewData["id"]" id="kinobd"></div>
     <script src="https://kinobd.ru/js/player_.js"></script>
 </div>
+
+<script src="js/jQuery.js"></script>
+    <script>
+        /*--menu-btn-fixed-when-scroll============*/
+        $(window).scroll(function(){
+            if($(document).scrollTop() > 20){
+                $('.navigation').addClass('fix-icon');
+            }
+            else{
+                $('.navigation').removeClass('fix-icon');
+            }
+        });
+        /*==popup-open==================================*/
+        $(document).on('click','.play-btn a',function(){
+            $('.play').addClass('active-popup');
+        });
+        /*==popup-Close==================================*/
+        $(document).on('click','.close-movie',function(){
+            $('.play').removeClass('active-popup');
+        });
+        /*==auto-play-when-popup-open===================*/
+        $('.play-btn a').click(function(){
+            $('#m-video')[0].play();
+        });
+        /*==Close-video-when-poppup-close==============*/
+        $('.close-movie').click(function(){
+            $('#m-video')[0].pause();
+        });
+      </script>

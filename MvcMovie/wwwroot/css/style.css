@@ -1,13 +1,13 @@
 *{
     margin: 0px;
     padding: 0px;
-    font-family: poppins;
+    font-family: sans-serif;
     box-sizing: border-box;
 }
 body{
     margin: 0px;
     padding: 0px;
-    font-family: poppins;
+    font-family: sans-serif;
 }
 ul{
     list-style: none;
@@ -213,7 +213,6 @@ a{
 }
 .main-slider-text .quality,
 .more-about-movie .quality{
-    background-color: #e70634;
     color: #080808;
     font-weight: 600;
     padding: 0px 5px;
@@ -251,14 +250,23 @@ a{
     font-size: 0.8rem;
     font-weight: 500;
 }
+
+.movie-preview {
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+}
+
 .main-slider-text .category a{
+    font-size: 14px;
     text-shadow: 1px 1px 1px black;
-    font-family: cursive;
+    font-family: 'Oswald', sans-serif;
     color: #e70634;
     margin: 0px 3px;
 }
 .rating img{
-    height: 10px;
+    height: 20px;
+    margin-left: 2.5px;
     width: 20px;
     object-fit: contain;
     object-position: center;
@@ -268,6 +276,14 @@ a{
     color: #ffffff;
     letter-spacing: 1px;
 }
+
+.slogan{
+    font-size: 0.8rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
 .main-slider-text .category-rating{
     display: flex;
     width: 100%;
@@ -548,6 +564,11 @@ footer .logo{
     width: 100%;
     position: relative;
 }
+
+.bottom-text {
+    width: 100%;
+}
+
 .title-container{
     width: 100%;
     max-width: 500px;
@@ -559,6 +580,7 @@ footer .logo{
     color: #ffffff;
     font-weight: 600;
     font-size: 2.3rem;
+    font-family: cursive;
     line-height: 50px;
     letter-spacing: 1px;
 }
@@ -593,6 +615,7 @@ footer .logo{
     flex-wrap: wrap;
 }
 .title-bottom .category{
+    
     margin-right: 40px;
     font-size: 0.8rem;
     color: #dadada;
@@ -725,6 +748,7 @@ footer .logo{
     text-align: center;
 }
 .movie-details strong{
+    font-family: sans-serif;
     color: #ffffff;
     font-size: 1.3rem;
     font-weight: 600;

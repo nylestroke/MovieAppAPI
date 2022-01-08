@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VcE5DReBEqOmmxVDQqFEysyFwsOnN/n8uLsdmgLle18=",
+  "Hash": "uV9k/V1+NwJqyynw92uhOBAnv1vCqO3qQhcO9h4QiBs=",
   "Source": "MvcMovie",
   "BasePath": "_content/MvcMovie",
   "Mode": "Default",
@@ -134,23 +134,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\fav-icon.png"
-    },
-    {
-      "Identity": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\Images\\IMDb-icon.png",
-      "SourceId": "MvcMovie",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\",
-      "BasePath": "_content/MvcMovie",
-      "RelativePath": "Images/IMDb-icon.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\IMDb-icon.png"
     },
     {
       "Identity": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\Images\\p-1.jpg",
@@ -474,6 +457,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\home.png"
+    },
+    {
+      "Identity": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\img\\IMDb-icon.png",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "img/IMDb-icon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\IMDb-icon.png"
+    },
+    {
+      "Identity": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\img\\kinopoisk-logo.png",
+      "SourceId": "MvcMovie",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\",
+      "BasePath": "_content/MvcMovie",
+      "RelativePath": "img/kinopoisk-logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\kinopoisk-logo.png"
     },
     {
       "Identity": "C:\\Users\\potam\\source\\repos\\MvcMovie\\MvcMovie\\wwwroot\\img\\menu.png",
