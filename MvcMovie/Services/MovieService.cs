@@ -13,7 +13,7 @@ public record MovieSearchResultFilmGenre(string? genre);
 
 public record MovieSearchResultFilmCountry(string? country);
 
-public record MovieSearchResultFilm(int filmId, string? nameRu, string? nameEn, string? nameOriginal, string? type, int? year,
+public record MovieSearchResultFilm(int filmId, string? nameRu, string? nameEn, string? nameOriginal, string? type, string? year,
     string? description, string? filmLength, MovieSearchResultFilmCountry[]? countries,
     MovieSearchResultFilmGenre[]? genres, string? rating, int? ratingVoteCount, string? posterUrl, string? posterUrlPreview);
 

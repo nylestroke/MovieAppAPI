@@ -4,63 +4,60 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/theme-switcher.css">
-    <script src="~/js/theme-switcher.js"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossrigin="anonymous"></script>
+	<!-- Link to CSS -->
+	<link rel="stylesheet" href="~/css/style.css">
+	<!-- Link Swiper CSS -->
+	<link rel="stylesheet" href="~/css/swiper-bundle.min.css">
+    <!-- Box Icons -->
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
 </head>
 <body>
 
-    <header>
-    <!--==Navigation===================================-->
-    <nav class="navigation">
-        <!--menu-btn--------------->
-        <input type="checkbox" class="menu-btn" id="menu-btn">
-        <label for="menu-btn" class="menu-icon">
-            <span class="nav-icon"></span>
-        </label>
-        <!--logo------------------->
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">
-            MV<span>Films</span>
-        </a>
-        <!--menu------------------->
-        <ul class="menu">
-            <li><a asp-area="" asp-controller="Home" asp-action="Index">Домой</a></li>
-            <li><a href="#">Фильмы</a></li>
-            <li><a href="#">Сериалы</a></li>
-            <li><a href="#">Мультфильмы</a></li>
-            <li><a asp-area="" asp-controller="Home" asp-action="Contact">Контакт</a></li>
-        </ul>
-        
-        <label id="switch" class="switch">
-            <input type="checkbox" onchange="toggleTheme()" id="slider">
-            <span class="slider round"></span>
-            </label>
-        
-        <!--Search-box------------->
-        <form action="" class="search-box">
-            <!--input-->
-            <input type="text" name="search" placeholder="Поиск по сайту" class="search-input" required/>
-            <!--btn-->
-            <button type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
-    </nav>
-    <!--nav-end-->
-        
-    </header>
+    <!-- Header -->
+    	<header>
+    		<!-- Nav -->
+    		<div class="nav container">
+    			<!-- Logo -->
+    			<a asp-area="" asp-controller="Home" asp-action="Index" class="logo">
+    				MV<span>Films</span>
+    			</a>
+    			<!-- Search -->
+			    <form action="">
+    			<div class="search-box">
+    				<input type="text" name="search" id="search-input" placeholder="Поиск фильмов" required>
+    				<i class='bx bx-search' ></i>
+    			</div>
+			    </form>
+    			<!-- User -->
+    			<a href="#" class="user">
+    				<img src="~/img/user.jpg" alt="" class="user-img">
+    			</a>
+    			<!-- NavBar -->
+    			<div class="navbar">
+    				<a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link nav-active">
+    					<i class='bx bx-home' ></i>
+    					<span class="nav-link-title">Домой</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bxs-hot' ></i>
+    					<span class="nav-link-title">Тренды</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bx-compass' ></i>
+    					<span class="nav-link-title">Исследовать</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bx-tv' ></i>
+    					<span class="nav-link-title">Фильмы</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bx-heart' ></i>
+    					<span class="nav-link-title">Любимые</span>
+    				</a>
+    			</div>
+    		</div>
+    	</header>
+    	
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -68,18 +65,20 @@
     </div>
 
     <!--==footer==============================-->
-    <footer>
-        <!--footer-logo--->
-        <a asp-area="" asp-controller="Home" asp-action="Index" class="logo">
-            MV<span>Films</span>
-        </a>
-        <!--copyright----->
-        <span class="copyright">
-            Copyright 2021 - MV Films
-        </span>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<div class="copyright">
+		<p>&#169; MVFilms All Right Reserved</p>
+	</div>
+
+
+	<!-- Link Swiper JS -->
+	<script src="js/swiper-bundle.min.js"></script>
+	<!-- Link to JS -->
+	<script src="js/main.js"></script>
+     <!-- Link to Libraries -->
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>

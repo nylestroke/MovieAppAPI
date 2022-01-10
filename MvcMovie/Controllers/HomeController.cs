@@ -18,14 +18,16 @@ namespace MvcMovie.Controllers
 
         public async Task<IActionResult> Index()
         {
-            if (string.IsNullOrEmpty(Request.Query["query"]))
+            if (string.IsNullOrEmpty(Request.Query["search"]))
             {
+                ViewData["search"] = null;
                 var result = await this._movieService.GetMovies();
                 return View(result);   
             }
             else
             {
-                var result = await this._movieService.GetMovies(Request.Query["query"]);
+                ViewData["search"] = Request.Query["search"].ToString();
+                var result = await this._movieService.GetMovies(Request.Query["search"]);
                 return View(result);
             }
         }
