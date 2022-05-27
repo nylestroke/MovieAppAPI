@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+	<!-- Link to CSS -->
+	<link rel="stylesheet" href="~/css/style.css">
+	<!-- Link Swiper CSS -->
+	<link rel="stylesheet" href="~/css/swiper-bundle.min.css">
+    <!-- Box Icons -->
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    	<header>
+    		<!-- Nav -->
+    		<div class="nav container">
+    			<!-- Logo -->
+    			<a asp-area="" asp-controller="Home" asp-action="Index" class="logo">
+    				MV<span>Films</span>
+    			</a>
+    			<!-- Search -->
+			    <form action="">
+    			<div class="search-box">
+    				<input type="text" name="search" id="search-input" placeholder="Поиск фильмов" required>
+    				<i class='bx bx-search' ></i>
+    			</div>
+			    </form>
+    			<!-- User -->
+    			<a href="#" class="user">
+    				<img src="~/img/user.jpg" alt="" class="user-img">
+    			</a>
+    			<!-- NavBar -->
+    			<div class="navbar">
+    				<a asp-area="" asp-controller="Home" asp-action="Index" class="nav-link nav-active">
+    					<i class='bx bx-home' ></i>
+    					<span class="nav-link-title">Домой</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bxs-hot' ></i>
+    					<span class="nav-link-title">Тренды</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bx-compass' ></i>
+    					<span class="nav-link-title">Исследовать</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bx-tv' ></i>
+    					<span class="nav-link-title">Фильмы</span>
+    				</a>
+    				<a href="#" class="nav-link">
+    					<i class='bx bx-heart' ></i>
+    					<span class="nav-link-title">Любимые</span>
+    				</a>
+    			</div>
+    		</div>
+    	</header>
+    	
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!--==footer==============================-->
+	<div class="copyright">
+		<p>&#169; MVFilms All Right Reserved</p>
+	</div>
+
+
+	<!-- Link Swiper JS -->
+	<script src="js/swiper-bundle.min.js"></script>
+	<!-- Link to JS -->
+	<script src="js/main.js"></script>
+     <!-- Link to Libraries -->
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
