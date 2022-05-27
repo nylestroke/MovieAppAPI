@@ -1,2 +1,2 @@
-# mvcmovie
-Пиратский сайт по просмотру фильмов на ASP .NET Core 6.0
+# Responsive Movie App using [KinopoiskUnofficialAPI]: https://kinopoiskapiunofficial.tech/
+Simple movie app created using ASP.NET Core 6.0
